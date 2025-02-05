@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from numberAPI.views import classify_number
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/',include('numberAPI.urls'))
+    path('api/',include('numberAPI.urls')),
+    path('',classify_number),
 ]
