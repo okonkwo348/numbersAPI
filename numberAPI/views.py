@@ -48,7 +48,7 @@ def classify_number(request):
         digits = [int(d) for d in str(number)]
         power = len(digits)
         armstrong_calc = " + ".join(f"{d}^{power}" for d in digits)
-        fun_fact = f"{number} is an Armstrong number because {armstrong_calc} = {number}"
+        fun_fact = f"{number} is an Armstrong number because {armstrong_calc} = {number} //gotten from the numbers API"
     else:
         fun_fact = get_fun_fact(number)
 
@@ -57,7 +57,7 @@ def classify_number(request):
         "is_prime": is_prime(number),
         "is_perfect": is_perfect(number),
         "properties": properties,
-        "digit_sum": sum(int(d) for d in str(number)),
+        "digit_sum":f"{ sum(int(d) for d in str(number))} // sum of its digits",
         "fun_fact": fun_fact,
     }
 
