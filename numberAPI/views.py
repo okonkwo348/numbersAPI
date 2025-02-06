@@ -17,7 +17,7 @@ def classify_number(request):
     is_prime = check_prime(number)
     is_perfect = check_perfect(number)
     is_armstrong = check_armstrong(number)
-    digit_sum = sum(int(digit) for digit in str(abs(number)))
+    digit_sum = f"{sum(int(digit) for digit in str(abs(number)))}, // sum of its digits"
     parity = "even" if number % 2 == 0 else "odd"
 
     # Fetch fun fact
@@ -65,7 +65,7 @@ def get_fun_fact(n):
         fact = f"{n} is an Armstrong number because "
         fact += " + ".join(f"{d}^{length}" for d in digits)
         fact += f" = {n}"
-        return fact
+        return f"{fact} //gotten from the numbers API"
 
     # Fetch fun fact from Numbers API for non-Armstrong numbers
     url = f"http://numbersapi.com/{n}/math"
